@@ -1,0 +1,43 @@
+cbear@devseeker:~/osgi-test$ 
+cbear@devseeker:~/osgi-test$ ./apache-karaf-4.0.7/bin/karaf 
+        __ __                  ____      
+       / //_/____ __________ _/ __/      
+      / ,<  / __ `/ ___/ __ `/ /_        
+     / /| |/ /_/ / /  / /_/ / __/        
+    /_/ |_|\__,_/_/   \__,_/_/         
+
+  Apache Karaf (4.0.7)
+
+Hit '<tab>' for a list of available commands
+and '[cmd] --help' for help on a specific command.
+Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown Karaf.
+
+karaf@root()> SimpleClient::start message is [Howdy]
+
+karaf@root()> 
+karaf@root()> bundle:list
+START LEVEL 100 , List Threshold: 50
+ID | State  | Lvl | Version        | Name
+-------------------------------------------------------------------------------------
+49 | Active |  80 | 1.0.0.SNAPSHOT | Simple OSGi service bundle using Aries blueprint
+50 | Active |  80 | 1.0.0.SNAPSHOT | Simple OSGi client using iPojo
+52 | Active |  80 | 1.0.0.SNAPSHOT | Simple OSGi api bundle for the simple service
+55 | Active |  80 | 1.12.1         | Apache Felix iPOJO
+56 | Active |  80 | 1.12.1         | Apache Felix iPOJO API
+57 | Active |  80 | 1.12.1         | Apache Felix iPOJO Composite
+58 | Active |  80 | 1.12.1         | Apache Felix iPOJO Gogo Command
+karaf@root()> 
+karaf@root()> 
+karaf@root()> bundle:stop 50
+SimpleClient::stop()
+karaf@root()> 
+karaf@root()> bundle:start 50
+karaf@root()> SimpleClient::start message is [Howdy]
+
+karaf@root()> shutdown
+Confirm: halt instance root (yes/no): yes
+karaf@root()> SimpleClient::stop()
+
+cbear@devseeker:~/osgi-test$ 
+cbear@devseeker:~/osgi-test$ 
+

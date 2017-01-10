@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.cb.osgi</groupId>
+		<artifactId>osgi-one</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>simple-client</artifactId>
+	<packaging>bundle</packaging>
+	<name>Simple OSGi client using iPojo</name>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>${bundle.plugin.version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-ipojo-plugin</artifactId>
+				<version>${ipojo.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>ipojo-bundle</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.ipojo.annotations</artifactId>
+			<version>${ipojo.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.cb.opsysinc</groupId>
+			<artifactId>simple-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- pax exam dependencies <dependency> <groupId>org.ops4j.pax.exam</groupId> 
+			<artifactId>pax-exam-container-native</artifactId> <version>${pax.exam.version}</version> 
+			<scope>test</scope> </dependency> <dependency> <groupId>org.ops4j.pax.exam</groupId> 
+			<artifactId>pax-exam-junit4</artifactId> <version>${pax.exam.version}</version> 
+			<scope>test</scope> </dependency> <dependency> <groupId>org.ops4j.pax.exam</groupId> 
+			<artifactId>pax-exam-link-mvn</artifactId> <version>${pax.exam.version}</version> 
+			<scope>test</scope> </dependency> <dependency> <groupId>org.ops4j.pax.url</groupId> 
+			<artifactId>pax-url-aether</artifactId> <version>${pax.url.version}</version> 
+			<scope>test</scope> </dependency> <dependency> <groupId>org.apache.felix</groupId> 
+			<artifactId>org.apache.felix.framework</artifactId> <version>5.6.1</version> 
+			<scope>test</scope> </dependency> -->
+	</dependencies>
+
+</project>
