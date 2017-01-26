@@ -27,6 +27,7 @@
 		<module>simple-api</module>
 		<module>simple-client</module>
 		<module>simple-server</module>
+		<module>integration-test</module>
 	</modules>
 
 	<build>
